@@ -3,18 +3,10 @@
 <script src="scripts/angular.min.js"></script>
 <body>
 
-<div data-ng-app="myApp" data-ng-controller="myCtrl" >
-	first name: <input type="text" data-ng-model="firstName" ><br>
-	last name: <input type="text" data-ng-model="lastName" ><br><br>
-	full name: {{firstName + " " + lastName}}
+<!-- object -->
+<div data-ng-app="" data-ng-init="person={ firstName: 'brad', lastName: 'joyner' }" >
+	the person's first name is {{ person.firstName }}
 </div>
 
-<script>
-	var app = angular.module("myApp", []);
-	app.controller("myCtrl", function($scope){
-		$scope.firstName = "brenda";
-		$scope.lastName = "kimathi";
-	});
-</script>
 </body>
 </html>
