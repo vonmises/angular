@@ -3,9 +3,10 @@
 <script src="scripts/angular.min.js"></script>
 <body>
 
-<!-- array -->
-<div data-ng-app="" data-ng-init="primes=[2, 3, 5, 7, 11, 13]" >
-	the third prime is {{ primes[2] }}
+<div data-ng-app="" data-ng-init="price=5.65; quantity=20" >
+	Price: <input type="number" data-ng-model="price" >
+	Quantity: <input type="number" data-ng-model="quantity" ><br><br>
+	Total amount is Kshs. {{ price * quantity }}
 </div>
 
 </body>
