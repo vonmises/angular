@@ -3,10 +3,10 @@
 <script src="scripts/angular.min.js"></script>
 <body>
 
-<div data-ng-app="" data-ng-init="price=5.65; quantity=20" >
-	Price: <input type="number" data-ng-model="price" >
-	Quantity: <input type="number" data-ng-model="quantity" ><br><br>
-	Total amount is Kshs. {{ price * quantity }}
+<div data-ng-app="" data-ng-init="names=['alice', 'wangeci', 'auma']" >
+	<ul>
+		<li data-ng-repeat="x in names">{{ x }}</li>
+	</ul>
 </div>
 
 </body>
