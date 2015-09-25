@@ -5,7 +5,7 @@
 		<div data-ng-app="nameApp" data-ng-controller="nameController" >
 			first name: <input type="text" data-ng-model="firstName" ><br>
 			last name: <input type="text" data-ng-model="lastName" ><br><br>
-			full name: {{ lastName + ", " + firstName }}
+			full name: {{ fullName() }}
 		</div>
 
 		<script>
@@ -13,6 +13,9 @@
 			app.controller("nameController", function($scope){
 				$scope.firstName = "tom";
 				$scope.lastName = "mboya";
+				$scope.fullName = function(){
+					return $scope.lastName + ", " + $scope.firstName;
+				}
 			});
 		</script>
 	</body>
