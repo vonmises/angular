@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<script src="scripts/angular.min.js"></script>
-<body>
-
-<div data-ng-app="" data-ng-init="names=['alice', 'wangeci', 'auma']" >
-	<ul>
-		<li data-ng-repeat="x in names">{{ x }}</li>
-	</ul>
-</div>
-
-</body>
+	<script src="scripts/angular.min.js"></script>
+	<body>
+		<div data-ng-app="" data-ng-init="names=[
+			{name: 'nikita', country: 'russia'},
+			{name: 'peter', country: 'france'},
+			{name: 'birkoff', country: 'germany'}]" >
+			<ol>
+				<li data-ng-repeat="x in names">
+					{{ x.name + ", " + x.country }}
+				</li>
+			</ol>
+		</div>
+	</body>
 </html>
