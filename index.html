@@ -5,9 +5,11 @@
 		<div data-ng-app="nameApp" data-ng-controller="nameController" >
 			first name: <input type="text" data-ng-model="firstName" ><br>
 			last name: <input type="text" data-ng-model="lastName" ><br><br>
-			full name: {{ fullName() }}
+			full name: {{ fullName() | uppercase }}<br><br>
+			cost: <input type="number" data-ng-model="cost" ><br>
+			quantity: <input type="number" data-ng-model="quantity" ><br><br>
+			total: {{ cost * quantity | currency }}
 		</div>
-
 		<script>
 			var app = angular.module("nameApp", []);
 			app.controller("nameController", function($scope){
@@ -16,6 +18,8 @@
 				$scope.fullName = function(){
 					return $scope.lastName + ", " + $scope.firstName;
 				}
+				$scope.cost = 5.50;
+				$scope.quantity = 20;
 			});
 		</script>
 	</body>
