@@ -11,11 +11,15 @@
 			quantity: <input type="number" data-ng-model="quantity" ><br><br>
 			total: {{ cost * quantity | currency }}<br><br>
 
-			<ul>
-				<li data-ng-repeat="x in names | orderBy: 'country'">
-				{{ x.name + ", " + x.country }}
-				</li>
-			</ul>
+			<p><input type="text" ng-model="test"></p>
+
+			<p>names:
+				<ul>
+					<li data-ng-repeat="x in names | filter:test | orderBy: 'country'">
+						{{ (x.name | uppercase) + ", " + x.country }}
+					</li>
+				</ul>
+			</p>
 		</div>
 		<script>
 			var app = angular.module("nameApp", []);
@@ -25,14 +29,12 @@
 				$scope.fullName = function(){
 					return $scope.lastName + ", " + $scope.firstName;
 				}
-
 				$scope.cost = 5.50;
 				$scope.quantity = 20;
-
 				$scope.names = [
-				{ name: "lilian", country: "kenya" },
-				{ name: "ken", country: "u.s." },
-				{ name: "kim", country: "armenia" }
+					{ name: "lilian", country: "kenya" },
+					{ name: "ken", country: "u.s." },
+					{ name: "kim", country: "armenia" }
 				];
 			});
 		</script>
